@@ -340,30 +340,45 @@ function updateProgress() {
             // スマホの振動
             if(navigator.vibrate) navigator.vibrate([100,50,100,50,200]);
 
-            // 紙吹雪発射
-            const duration = 1500;
-            const end = Date.now() + duration;
-
-            (function frame() {
-                confetti({
-                    particleCount: 5,
-                    angle: 60,
-                    spread: 55,
-                    origin: { x: 0, y: 0.8 },
-                    colors: ['#F06292', '#BA68C8', '#4FC3F7', '#FF8A65']
-                });
-                confetti({
-                    particleCount: 5,
-                    angle: 120,
-                    spread: 55,
-                    origin: { x: 1, y: 0.8 },
-                    colors: ['#F06292', '#BA68C8', '#4FC3F7', '#FF8A65']
-                });
-
-                if (Date.now() < end) {
-                    requestAnimationFrame(frame);
-                }
-            }());
+        // 紙吹雪発射
+        const duration = 1500;
+        const end = Date.now() + duration;
+        
+        // ②ポップ + ⑤ホワイト(少なめ) ハイブリッド
+        const confettiColors = [
+          '#FF3B30', // red
+          '#FFCC00', // yellow
+          '#34C759', // green
+          '#007AFF', // blue
+          '#AF52DE', // purple
+          '#FF9500', // orange
+          '#FF3B30',
+          '#FFCC00',
+          '#34C759',
+          '#007AFF',
+          'rgba(255,255,255,0.9)' // white accent (低確率)
+        ];
+        
+        (function frame() {
+          confetti({
+            particleCount: 5,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0, y: 0.2 },
+            colors: confettiColors
+          });
+          confetti({
+            particleCount: 5,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1, y: 0.2 },
+            colors: confettiColors
+          });
+        
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          }
+        }());
         }
     }
     // --- 入力イベント ---
