@@ -149,7 +149,7 @@ const canvas = document.getElementById('gameCanvas');
         window.addEventListener('resize', resize);
         resize();
         
-        statusDiv.textContent = "バラバラの骨をドラッグして整復してください";
+        statusDiv.textContent = "たいへん！骨がバラバラ！";
     }
 
     function resize() {
