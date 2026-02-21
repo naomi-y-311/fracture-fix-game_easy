@@ -364,14 +364,14 @@ function updateProgress() {
             particleCount: 5,
             angle: 60,
             spread: 55,
-            origin: { x: 0, y: 0.2 },
+            origin: { x: 0, y: 1 },
             colors: confettiColors
           });
           confetti({
             particleCount: 5,
             angle: 120,
             spread: 55,
-            origin: { x: 1, y: 0.2 },
+            origin: { x: 1, y: 1 },
             colors: confettiColors
           });
         
